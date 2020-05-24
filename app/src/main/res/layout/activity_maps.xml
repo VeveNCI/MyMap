@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainView"
+    >
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" >
+
+    </fragment>
+
+    <Button
+        android:id="@+id/clear_memory_button"
+        android:layout_width="104dp"
+        android:layout_height="39dp"
+        android:background="@android:color/holo_purple"
+        android:gravity="center_horizontal"
+        android:onClick="clearMemoryClick"
+        android:text="@string/clear_memory"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/acceleration_text"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="64dp"
+        android:background="#DCB93AC6"
+        android:gravity="center_horizontal"
+        android:text="@string/acceleration_text"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/map" />
+
+    <ImageButton
+        android:id="@+id/zoom_out_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:onClick="zoomOutClick"
+        android:src="@android:drawable/btn_minus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/clear_memory_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/zoom_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
+        android:onClick="zoomInClick"
+        android:src="@android:drawable/btn_plus"
+        app:layout_constraintBottom_toTopOf="@+id/zoom_out_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/hide_buttons_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:onClick="hideButtonsClick"
+        android:src="@android:drawable/btn_radio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/show_acceleration_button" />
+
+    <ImageButton
+        android:id="@+id/show_acceleration_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/transparent"
+        android:onClick="showAccelerationClick"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/clear_memory_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
